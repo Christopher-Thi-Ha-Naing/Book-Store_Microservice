@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: bookstore-payment-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookstorepayment
+    username: root
+    password: sasa
+  jpa:
+    hibernate:
+      ddl-auto: none
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8083/eureka
+server:
+  port: 0

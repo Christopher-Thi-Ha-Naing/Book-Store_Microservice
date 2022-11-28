@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/masterLayout::layout(~{::main})}">
+
+<body>
+<main role="main">
+    <div class="container mt-5 p-5">
+        <div class="row">
+            <div class="col-md-5 offset-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Account Info</h3>
+                    </div>
+                    <div class="card-body">
+                        <form th:action="@{/bookstore/account-info}" th:object="${accountInfo}" method="post">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" th:field="*{name}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="accNum">Account Number</label>
+                                <input type="text" id="accNum" th:field="*{accountNumber}" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary">CheckOut</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

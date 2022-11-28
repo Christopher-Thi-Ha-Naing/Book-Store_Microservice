@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/masterLayout::layout(~{::main})}">
+
+<body>
+<main role="main">
+  <div class="container mt-4 p-5">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h3>Cart View</h3>
+          </div>
+          <div class="card-body">
+            <form method="post" th:action="@{/bookstore/book/checkout}" th:object="${book}">
+            <div th:replace="~{fragment/cartView.html::cartTable}"></div>
+            <div class="my-3">
+              <button type="submit" role="button" th:href="@{/}" class="btn btn-outline-primary">CheckOut</button>
+              <a th:href="@{/}" class="btn btn-outline-warning">Continue Shopping</a>
+              <a th:href="@{/bookstore/book/cart/clear}" class="btn btn-outline-danger">Clear Cart</a>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
